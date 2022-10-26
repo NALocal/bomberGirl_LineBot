@@ -16,6 +16,6 @@ exports.start = function(linebotParser){
         res.send('<h1>This is find.</h1>');
     });
     app.listen(process.env.PORT || port,function(){
-        Log.LogDo(`Good morning ${myData.name}!`)
+        Log.LogDo(`Good morning ${myData.name}!`);
     });
 }
