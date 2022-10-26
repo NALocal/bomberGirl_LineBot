@@ -8,7 +8,7 @@ const myData = require('../jsonHome/myData.json');
 
 const healthCheck = '/healthCheck';
 const lineWebhook = '/linewebhook';
-const port = 80;
+const port = 10000;
 
 exports.start = function(linebotParser){
     app.post(lineWebhook,linebotParser);
