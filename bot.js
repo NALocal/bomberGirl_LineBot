@@ -1,7 +1,7 @@
 // 載入env變量
 require('dotenv').config();
 // 健康狀態
-require('./jsHome/healthCheck').start();
+// require('./jsHome/healthCheck').start();
 // 定時呼叫自己
 require('./jsHome/cronTask.js').cronCallMysell();
 const Log = require('./jsHome/CatchFunction.js');
