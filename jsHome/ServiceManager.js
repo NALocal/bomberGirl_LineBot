@@ -10,11 +10,10 @@ const healthCheck = '/healthCheck';
 const lineWebhook = '/linewebhook';
 const port = 10000;
 
-app.get(healthCheck,function (req,res){
-    res.send('<h1>This is find.</h1>');
-});
-
 exports.start = function(lineBot){
+    app.get(healthCheck,function (req,res){
+        res.send('<h1>This is find.</h1>');
+    });
     app.post(lineWebhook,lineBot);
     app.listen(process.env.PORT || port,function(){
         Log.LogDo(`Good morning ${myData.name}!`)
