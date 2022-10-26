@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Log = require('./jsHome/CatchFunction.js');
 const UserF = require('./jsHome/UserFunction.js');
 const GroupF = require('./jsHome/GroupFunction.js');

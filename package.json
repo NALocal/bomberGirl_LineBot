@@ -11,6 +11,7 @@
     "license": "ISC",
     "dependencies": {
         "discord-webhook-node": "^1.1.8",
+        "dotenv": "^16.0.3",
         "fs": "0.0.1-security",
         "linebot": "^1.6.1"
     }
