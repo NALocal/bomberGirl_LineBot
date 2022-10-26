@@ -1,9 +1,9 @@
 // 載入env變量
 require('dotenv').config();
-// 健康狀態
-// require('./jsHome/healthCheck').start();
 // 定時呼叫自己
 require('./jsHome/cronTask.js').cronCallMysell();
+// 伺服器&健康狀態
+const serviceManager = require('./jsHome/serviceManager.js');
 const Log = require('./jsHome/CatchFunction.js');
 const UserF = require('./jsHome/UserFunction.js');
 const GroupF = require('./jsHome/GroupFunction.js');
@@ -34,7 +34,4 @@ bot.on('message', function (event) {
     }
 });
 
-// Bot 所監聽的 webhook 路徑與 port，process.env.PORT 是託管平台自帶的
-bot.listen('/', process.env.PORT || 10000, function () {
-    Log.LogDo(`Good morning ${myData.name}!`)
-});
+serviceManager.start(bot.parser());
