@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 const Log = require('./CatchFunction.js');
-const myData = require('../jsonHome/MyData.json');
+const myData = require('../jsonHome/myData.json');
 
 const healthCheck = '/healthCheck';
 const lineWebhook = '/linewebhook';
