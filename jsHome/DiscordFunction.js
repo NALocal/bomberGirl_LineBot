@@ -2,7 +2,7 @@
 require('dotenv').config();
 const myData = require('../jsonHome/MyData.json');
 const { Webhook } = require('discord-webhook-node');
-const { LogDo, ErrorDo } = require('./CatchFunction');
+const { ErrorDo } = require('./CatchFunction');
 const hook = new Webhook(process.env.DISCORD_WEBHOOK);
 
 exports.sendMessage = function(callback, message = myData.hello, name = myData.name, avatar = myData.avatar) {

@@ -1,4 +1,3 @@
-const Log = require('./CatchFunction.js');
 const prefixData = require('../jsonHome/prefix.json');
 const bomberGirlD = require('../jsonHome/bomberGirlData.json');
 

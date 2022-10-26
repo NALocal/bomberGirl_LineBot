@@ -1,13 +1,13 @@
 // 載入env變量
 require('dotenv').config();
 // 定時呼叫自己
-require('./jsHome/cronTask.js').cronCallMysell();
+require('./jsHome/CronTask.js').cronCallMysell();
 // 伺服器&健康狀態
-const serviceManager = require('./jsHome/serviceManager.js');
-const Log = require('./jsHome/CatchFunction.js');
+const serviceManager = require('./jsHome/ServiceManager.js');
 const UserF = require('./jsHome/UserFunction.js');
 const GroupF = require('./jsHome/GroupFunction.js');
-const myData = require('./jsonHome/MyData.json');
+const myData = require('./jsonHome/myData.json');
+
 const linebot = require('linebot');
 
 // 用於辨識Line Channel的資訊
