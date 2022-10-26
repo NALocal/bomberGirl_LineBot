@@ -1,6 +1,7 @@
 // 載入env變量
 require('dotenv').config();
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
 const Log = require('./CatchFunction.js');
@@ -10,8 +11,14 @@ const healthCheck = '/healthCheck';
 const lineWebhook = '/linewebhook';
 const port = 10000;
 
-exports.start = function(linebotParser){
-    app.post(lineWebhook,linebotParser);
+const parser = bodyParser.json({
+verify: function (req, res, buf, encoding) {
+    req.rawBody = buf.toString(encoding);
+}
+});
+
+exports.start = function(linebotParse){
+    app.post(lineWebhook,parser,linebotParse);
     app.get(healthCheck,function (req,res){
         res.send('<h1>This is find.</h1>');
     });
