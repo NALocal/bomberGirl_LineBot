@@ -17,6 +17,8 @@ const bot = linebot({
     channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
 });
 
+const linebotParser = bot.parser();
+
 // 當有人傳送訊息給 Bot 時
 bot.on('message', function (event) {
     // 測試用代碼，開發人員可自行調整 MasterID 以利於 debugger
@@ -34,4 +36,4 @@ bot.on('message', function (event) {
     }
 });
 
-serviceManager.start(bot.parser());
+serviceManager.start(linebotParser);

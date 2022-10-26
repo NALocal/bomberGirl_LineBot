@@ -8,13 +8,13 @@ const myData = require('../jsonHome/myData.json');
 
 const healthCheck = '/healthCheck';
 const lineWebhook = '/linewebhook';
-const port = 10000;
+const port = 80;
 
-exports.start = function(lineBot){
+exports.start = function(linebotParser){
+    app.post(lineWebhook,linebotParser);
     app.get(healthCheck,function (req,res){
         res.send('<h1>This is find.</h1>');
     });
-    app.post(lineWebhook,lineBot);
     app.listen(process.env.PORT || port,function(){
         Log.LogDo(`Good morning ${myData.name}!`)
     });
