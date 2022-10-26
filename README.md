@@ -1,0 +1,2 @@
+# bomberGirl_LineBot
+轟炸少女台港澳群LineBot源碼，基本角色資料查詢&amp;DiscordWebHook訊息同步
