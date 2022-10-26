@@ -1,3 +1,5 @@
+// 載入env變量
+require('dotenv').config();
 const myData = require('../jsonHome/MyData.json');
 const { Webhook } = require('discord-webhook-node');
 const { LogDo, ErrorDo } = require('./CatchFunction');
