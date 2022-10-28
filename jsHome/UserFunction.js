@@ -11,7 +11,6 @@ exports.DoLineUserFunction = function (event, lineData = "") {
             tempPrefix = element;
         }
     })
-    console.log('tempPrefix',tempPrefix);
 
     switch (tempPrefix) {
         case '0':
@@ -36,10 +35,7 @@ function UserHelpFunction(event, userMessage, tempPrefix) {
 
 function UserMenuFunction(event, userMessage, tempPrefix) {
     let messageObject;
-    console.log('====1====');
     const args = userMessage.substring(prefixData[tempPrefix].value.length, userMessage.length);
-    console.log(userMessage);
-    console.log(args);
     switch (args.trim()) {
         case "bomber":
             messageObject = getBombersImageUrl(bomberGirlD.bomber);
@@ -63,7 +59,15 @@ function UserMenuFunction(event, userMessage, tempPrefix) {
             "columns": messageObject
         }
     };
-    event.reply(message);
+    event.reply(message)
+    .then(data => {
+        console.log("replySuccess");
+        console.log(data);
+    })
+    .catch(error => {
+        console.log("replyFail");
+        console.log(error);
+    };
 }
 
 function getBombersImageUrl(datas) {
