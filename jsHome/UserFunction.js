@@ -67,7 +67,7 @@ function UserMenuFunction(event, userMessage, tempPrefix) {
     .catch(error => {
         console.log("replyFail");
         console.log(error);
-    };
+    });
 }
 
 function getBombersImageUrl(datas) {
