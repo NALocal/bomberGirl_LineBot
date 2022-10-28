@@ -59,15 +59,9 @@ function UserMenuFunction(event, userMessage, tempPrefix) {
             "columns": messageObject
         }
     };
-    event.reply(message)
-    .then(data => {
-        console.log("replySuccess");
-        console.log(data);
-    })
-    .catch(error => {
-        console.log("replyFail");
-        console.log(error);
-    });
+    
+    // 這壞了
+    event.reply(message);
 }
 
 function getBombersImageUrl(datas) {
