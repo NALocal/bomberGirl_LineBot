@@ -11,6 +11,10 @@ const healthCheck = '/healthCheck';
 const lineWebhook = '/linewebhook';
 const port = 10000;
 
+app.get('/',function (req,res){
+    res.send('ok');
+});
+
 app.get(healthCheck,function (req,res){
     res.send('ok');
 });
