@@ -10,10 +10,10 @@ exports.sendMessage = function(callback, message = myData.hello, name = myData.n
     hook.setAvatar(avatar);
     hook.send(message)
         .then(() => {
-            callback(true);
+            callback(true, "傳送訊息成功");
         })
         .catch((err) => {
-            callback(false, err);
+            ErrorDo(err, "傳送訊息失敗");
         })
 }
 
@@ -24,10 +24,9 @@ exports.sendImage = function(callback, image = "None", name = myData.name, avata
             hook.setAvatar(avatar);
             hook.sendFile(image);
         }
-        callback(true);
+        callback(true, "傳送圖片成功");
     } catch (err) {
         ErrorDo(err, "傳送圖片失敗");
-        callback(false);
     }
 }
 
@@ -38,9 +37,8 @@ exports.sendVideo = function(callback, video = "None", name = myData.name, avata
             hook.setAvatar(avatar);
             hook.sendFile(video);
         }
-        callback(true);
+        callback(true, "傳送影音成功");
     } catch (err) {
         ErrorDo(err, "傳送影音失敗");
-        callback(false);
     }
 }
